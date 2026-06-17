@@ -138,7 +138,7 @@
     "isSummary": false,
     "tldr": "TacVLA augments Vision-Language-Action models with tactile sensing via a contact-aware gating mechanism, boosting robustness in occlusion-heavy, contact-rich, fine-grained manipulation tasks.",
     "affiliations": "Purdue University, Istituto Italiano di Tecnologia, Università di Genova",
-    "venueFull": "",
+    "venueFull": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
     "sourceUrl": "https://arxiv.org/html/2603.12665v1",
     "verified": true,
     "notes": "Verified against the live arXiv page (https://arxiv.org/abs/2603.12665 and /html/2603.12665v1). Title, topic, and authors (Kaidi Zhang, Heng Zhang, Zhengtong Xu, et al., Purdue University / Istituto Italiano di Tecnologia) all match. A direct verbatim fetch of the arXiv abstract matches the claimed text word for word, including all numerical results (20% disassembly, 60% in-box picking, 2.1x under visual occlusion). This is the official, complete, and verbatim abstract. Submitted 13 Mar 2026 (v1), consistent with the arXiv ID. Not hallucinated and not a summary."
@@ -150,7 +150,7 @@
     "isSummary": false,
     "tldr": "A robotic gripper combining fingertip tactile sensing with a visuo-tactile active palm to enable dexterous in-hand manipulation.",
     "affiliations": "Purdue University, Columbia University",
-    "venueFull": "",
+    "venueFull": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
     "sourceUrl": "https://yuhao-zhou.com/",
     "verified": false,
     "notes": "no abstract found"
@@ -162,7 +162,7 @@
     "isSummary": false,
     "tldr": "A hierarchical tactile-aware pipeline pairs human-demonstration visuotactile high-level policies with simulation-trained whole-body control for contact-rich quadrupedal loco-manipulation, improving over vision-only baselines by 28.54%.",
     "affiliations": "Purdue University, Istituto Italiano di Tecnologia, Columbia University",
-    "venueFull": "",
+    "venueFull": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
     "sourceUrl": "https://arxiv.org/abs/2604.27224",
     "verified": true,
     "notes": "Verified against arXiv:2604.27224. The arXiv page confirms the title \"Learning Tactile-Aware Quadrupedal Loco-Manipulation Policies\" with authors including Pokuang Zhou, Yuhao Zhou, Binghao Huang, Yunzhu Li, Yu She, et al. The claimed abstract is verbatim and complete — matches the official arXiv abstract word for word, including the 28.54% improvement figure and the three named tasks (in-hand reorientation with insertion, valve tightening, delicate object manipulation). Not hallucinated, not from a different paper, no corrections needed."

@@ -21,6 +21,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX = os.path.join(ROOT, "index.html")
 PAPERS_DIR = os.path.join(ROOT, "papers")
 ABSTRACTS_JSON = os.path.join(ROOT, "tools", "abstracts.json")
+# Rendered page-1 images of each paper PDF (see tools/fetch_firstpages.sh).
+# When present, used as the detail-page hero instead of the gallery teaser.
+FIRSTPAGE_DIR = os.path.join(ROOT, "static", "paper_firstpage")
 
 # Slugs in the SAME order the <article> cards appear in index.html. The detail
 # page for card N is papers/<SLUGS[N]>.html. Keep this in sync when reordering.
@@ -43,11 +46,26 @@ SLUGS = [
     "wt-umi",
     "hipi",
     "art-glove",
+    "locotouch",
+    None,  # Analog Devices industry feature — links out to analog.com, no detail page
 ]
 
 # Marker comments let us re-run idempotently: anything between them is regenerated.
 LINK_OPEN = "<!-- detail-link:start -->"
 LINK_CLOSE = "<!-- detail-link:end -->"
+
+# Per-slug overrides for the detail page's resource links (the gallery card is
+# left untouched). Each entry is a list of {label, href, icon} that REPLACES the
+# card's parsed links on the detail page. Use when the public link is paywalled
+# and we host a copy locally. Paths are relative to the papers/ directory.
+LINK_OVERRIDES = {
+    # STAG's Nature article is paywalled; link the locally-hosted PDF instead.
+    "stag": [
+        {"label": "Webpage", "href": "https://stag.csail.mit.edu/", "icon": "public"},
+        {"label": "Paper (PDF)", "href": "pdf/stag-scalable-tactile-glove.pdf", "icon": "description"},
+        {"label": "Code", "href": "https://github.com/Erkil1452/touch", "icon": "code"},
+    ],
+}
 
 
 # --------------------------------------------------------------------------- #
@@ -85,6 +103,12 @@ def parse_articles(index_html: str) -> list[dict]:
 
     parsed = []
     for slug, art in zip(SLUGS, articles):
+        # A None slug marks an "external" card (e.g. an industry feature that
+        # links straight to a third-party site). We don't generate a detail page
+        # or rewrite its links — its card already carries its own outbound link.
+        if slug is None:
+            parsed.append({"slug": None, "external": True})
+            continue
         # If index.html was already linked, strip the wrappers so the detail
         # page's own title/media never become self-links.
         art = _unwrap(art)
@@ -156,6 +180,11 @@ def parse_articles(index_html: str) -> list[dict]:
                     "label": label,
                 }
             )
+        # Per-slug override: replace the detail page's links (e.g. swap a
+        # paywalled URL for a locally-hosted PDF). Gallery card is unaffected.
+        if slug in LINK_OVERRIDES:
+            links = [dict(l) for l in LINK_OVERRIDES[slug]]
+
         coming_soon = "coming soon" in linkrow.lower() and not links
 
         # Fail loudly rather than emit a blank page if a card can't be parsed.
@@ -198,12 +227,34 @@ PRIMARY_ICONS = {
 
 
 def render_hero_media(p: dict) -> str:
-    """Bigger version of the card media for the detail hero."""
+    """Hero panel for the detail page. Prefer the paper's rendered first page
+    (looks like an academic paper, not the home-page teaser). Fall back to the
+    gallery teaser media for papers with no PDF (e.g. unreleased works)."""
+    firstpage = os.path.join(FIRSTPAGE_DIR, f"{p['slug']}.jpg")
+    if os.path.exists(firstpage):
+        title = html.escape(plain(p["title"]))
+        return (
+            f'<img alt="First page of the {title} paper" loading="lazy" '
+            f'class="w-full h-full object-contain bg-white" '
+            f'src="../static/paper_firstpage/{p["slug"]}.jpg"/>'
+        )
+    # Fallback: reuse the gallery teaser, scaled to fill.
     el = p["media_el"]
-    # Make videos/images fill the hero panel.
     el = el.replace("group-hover:scale-105 transition-transform duration-700 ease-in-out", "")
     el = re.sub(r'\bclass="[^"]*"', lambda m: 'class="w-full h-full object-cover"', el, count=1)
     return el
+
+
+def has_firstpage(p: dict) -> bool:
+    return os.path.exists(os.path.join(FIRSTPAGE_DIR, f"{p['slug']}.jpg"))
+
+
+def hero_container_class(p: dict) -> str:
+    """Aspect ratio of the hero panel. A paper first page is portrait (US Letter
+    ≈ 17:22), so give it a portrait frame; teasers stay landscape/square."""
+    if has_firstpage(p):
+        return "aspect-[17/22] max-w-md mx-auto lg:mx-0"
+    return "aspect-video lg:aspect-square"
 
 
 def render_buttons(p: dict) -> str:
@@ -364,7 +415,6 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 <a class="font-headline-lg text-headline-lg font-bold text-deep-space tracking-tight" href="../index.html">Awesome Flexible Tactile Arrays</a>
 </div>
 <div class="hidden md:flex items-center gap-4">
-<a href="../index.html" class="font-body-md text-body-md text-secondary hover:text-primary transition-colors">Gallery</a>
 <a href="https://discord.gg/6gw887Vxms" target="_blank" rel="noopener" class="bg-deep-space text-white px-4 py-2 rounded font-label-caps text-label-caps hover:bg-on-secondary-fixed transition-colors">Join Discord</a>
 </div>
 </div>
@@ -375,7 +425,7 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 <!-- Breadcrumbs -->
 <nav aria-label="Breadcrumb" class="flex text-sm text-secondary mb-8 font-body-md">
 <ol class="inline-flex items-center space-x-1 md:space-x-3 flex-wrap">
-<li class="inline-flex items-center"><a class="hover:text-primary transition-colors" href="../index.html">Gallery</a></li>
+<li class="inline-flex items-center"><a class="hover:text-primary transition-colors" href="../index.html">All</a></li>
 <li><div class="flex items-center"><span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span><a class="hover:text-primary transition-colors" href="../index.html">{html.escape(cat)}</a></div></li>
 <li aria-current="page"><div class="flex items-center"><span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span><span class="text-on-surface-variant font-medium">{html.escape(title_plain[:60])}{'…' if len(title_plain) > 60 else ''}</span></div></li>
 </ol>
@@ -397,7 +447,7 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 {render_buttons(p)}
 </div>
 </div>
-<div class="lg:col-span-5 relative mt-8 lg:mt-0 rounded-xl overflow-hidden border border-outline-variant bg-surface-subtle aspect-video lg:aspect-square">
+<div class="lg:col-span-5 relative mt-8 lg:mt-0 rounded-xl overflow-hidden border border-outline-variant bg-surface-subtle {hero_container_class(p)}">
 {render_hero_media(p)}
 </div>
 </div>
@@ -474,6 +524,8 @@ def link_cards(index_html: str, papers: list[dict]) -> str:
     strips any prior detail-link wrappers before re-applying."""
     articles = re.findall(r"<article\b.*?</article>", index_html, re.S)
     for art, p in zip(articles, papers):
+        if p.get("external"):
+            continue  # external card keeps its own outbound links
         href = f"papers/{p['slug']}.html"
         new_art = _unwrap(art)
 
@@ -519,17 +571,22 @@ def main() -> None:
                 abstracts[row["id"]] = row
 
     os.makedirs(PAPERS_DIR, exist_ok=True)
+    generated = 0
     for p in papers:
+        if p.get("external"):
+            continue  # external cards link out; no detail page
         page = render_page(p, head_inner, abstracts.get(p["slug"]))
         out = os.path.join(PAPERS_DIR, f"{p['slug']}.html")
         with open(out, "w", encoding="utf-8") as fh:
             fh.write(page)
         print(f"  wrote papers/{p['slug']}.html")
+        generated += 1
 
     linked = link_cards(index_html, papers)
     with open(INDEX, "w", encoding="utf-8") as fh:
         fh.write(linked)
-    print(f"Linked {len(papers)} cards in index.html -> papers/<slug>.html")
+    print(f"Linked {generated} cards in index.html -> papers/<slug>.html "
+          f"({len(papers) - generated} external card(s) left as-is)")
 
 
 if __name__ == "__main__":
