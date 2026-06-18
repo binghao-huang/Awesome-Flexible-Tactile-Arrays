@@ -33,6 +33,7 @@ SLUGS = [
     "3d-vitac",
     "vt-refine",
     "touch-in-the-wild",
+    None,  # Analog Devices industry feature — links out to analog.com, no detail page
     "leflexitac",
     "policy-consensus",
     "motif-hand",
@@ -47,7 +48,18 @@ SLUGS = [
     "hipi",
     "art-glove",
     "locotouch",
-    None,  # Analog Devices industry feature — links out to analog.com, no detail page
+    "dexskin",
+    "arraybot",
+    "robot-synesthesia",
+    "touch-dexterity",
+    "senstextile",
+    "textile-bright",
+    "embroidered-gloves",
+    "flexglove",
+    "opentouch",
+    "actionsense",
+    "phystouch",
+    "intcarpet",
 ]
 
 # Marker comments let us re-run idempotently: anything between them is regenerated.

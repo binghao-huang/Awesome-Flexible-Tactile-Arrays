@@ -12,6 +12,78 @@
     "notes": "Verified against the claimed Europe PMC source (DOI:10.1038/s41586-019-1234-z). Title, authors (Sundaram, Kellnhofer, Li, Zhu, Torralba, Matusik), journal (Nature), and year (2019) confirmed via Europe PMC and corroborated by Crossref. All 10 distinctive claims in the abstract (548 sensors, 135,000 frames, 26 objects, piezoresistive film/conductive thread electrodes, ~US$10 cost, deep convolutional neural networks, mechanoreceptor networks, computer-vision-based grasping, opening and closing sentences) were each matched verbatim against the source's abstractText field. The abstract is the official, verbatim, complete abstract for this exact paper — not hallucinated and not from a different paper."
   },
   {
+    "id": "senstextile",
+    "abstractFound": true,
+    "abstract": "Recording, modelling, and understanding tactile interactions is important in the study of human behaviour and in the development of applications in healthcare and robotics. However, such studies remain challenging because existing wearable sensory interfaces are limited in terms of performance, flexibility, scalability, and cost. Here we report a textile-based tactile learning platform that enables recording, monitoring, and learning of human–environment interactions. The tactile textiles are created via digital machine knitting of inexpensive piezoresistive fibres, and can conform to arbitrary three-dimensional geometries. To ensure that our system is robust against variations in individual sensors, we use machine learning techniques for sensing correction and calibration. Using the platform, we capture diverse human–environment interactions (more than a million tactile frames), and show that the artificial intelligence-powered sensing textiles can classify humans' sitting poses, motions, and other interactions with the environment. We also show that the platform can recover dynamic whole-body poses, reveal environmental spatial information, and discover biomechanical signatures.",
+    "isSummary": false,
+    "tldr": "A textile-based tactile learning platform of machine-knitted piezoresistive fibres that conform to 3D geometries, capturing over a million tactile frames to classify human poses, recover whole-body motion, and reveal human–environment interactions.",
+    "affiliations": "MIT Computer Science and Artificial Intelligence Laboratory (CSAIL), MIT Department of Electrical Engineering and Computer Science",
+    "venueFull": "Nature Electronics, Volume 4, Issue 3, pp. 193–201 (2021)",
+    "sourceUrl": "https://www.nature.com/articles/s41928-021-00558-0",
+    "verified": true,
+    "notes": "Title, authors (Yiyue Luo, Yunzhu Li, Pratyusha Sharma, Wan Shou, Kui Wu, Michael Foshey, Beichen Li, Tomas Palacios, Antonio Torralba, Wojciech Matusik), venue (Nature Electronics 4, 193-201, 2021) and links taken verbatim from Yunzhu Li's homepage (yunzhuli.github.io) and the project page (senstextile.csail.mit.edu). Abstract copied verbatim from the project page. Selected as the Nature Electronics Vol 4 Issue 3 (March 2021) cover."
+  },
+  {
+    "id": "textile-bright",
+    "abstractFound": true,
+    "abstract": "Flexible fiber electronics couple with the human body for wireless tactile sensing. Intelligent textiles are fabrics and garments with integrated functionalities that can sense, store, process, and communicate information in a seamless, scalable, and unobtrusive manner. They create vast opportunities, ranging from monitoring physiological signals and daily physical interactions to powering smart-home devices. Challenges to achieving such materials include incorporating softness, flexibility, and breathability without losing desired functionality. However, present wireless modules, microprocessors, and analog-to-digital converters rely on intrinsically rigid integrated circuit chips that consume high power and hinder coherent incorporation into soft fibers and textiles. On page 74 of this issue, Yang et al. report a chipless fiber for wireless visual-to-digital transmission that senses interactions with the human body. The fibers can be woven into wearable fabric and could transform how people interact with the environment and with each other.",
+    "isSummary": false,
+    "tldr": "A Science Perspective on intelligent textiles, highlighting chipless fiber electronics that enable wireless visual-to-digital tactile sensing woven into wearable fabric.",
+    "affiliations": "University of Illinois Urbana-Champaign, Massachusetts Institute of Technology",
+    "venueFull": "Science, Volume 384, Issue 6691, pp. 29-30 (2024)",
+    "sourceUrl": "https://www.science.org/doi/full/10.1126/science.ado5922",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract sourced from Yunzhu Li's homepage (yunzhuli.github.io) and the official source page. Abstract copied verbatim from the source."
+  },
+  {
+    "id": "embroidered-gloves",
+    "abstractFound": true,
+    "abstract": "Human-machine interfaces for capturing, conveying, and sharing tactile information across time and space hold immense potential for healthcare, augmented and virtual reality, human-robot collaboration, and skill development. To realize this potential, such interfaces should be wearable, unobtrusive, and scalable regarding both resolution and body coverage. Taking a step towards this vision, we present a textile-based wearable human-machine interface with integrated tactile sensors and vibrotactile haptic actuators that are digitally designed and rapidly fabricated. We leverage a digital embroidery machine to seamlessly embed piezoresistive force sensors and arrays of vibrotactile actuators into textiles in a customizable, scalable, and modular manner. We use this process to create gloves that can record, reproduce, and transfer tactile interactions. User studies investigate how people perceive the sensations reproduced by our gloves with integrated vibrotactile haptic actuators. To improve the effectiveness of tactile interaction transfer, we develop a machine-learning pipeline that adaptively models how each individual user reacts to haptic sensations and then optimizes haptic feedback parameters. Our interface showcases adaptive tactile interaction transfer through the implementation of three end-to-end systems: alleviating tactile occlusion, guiding people to perform physical skills, and enabling responsive robot teleoperation.",
+    "isSummary": false,
+    "tldr": "Digitally embroidered smart gloves embed piezoresistive force sensors and vibrotactile actuators into textiles, with an adaptive machine-learning pipeline that records, reproduces, and transfers tactile interactions across users, space, and time.",
+    "affiliations": "Massachusetts Institute of Technology (MIT CSAIL)",
+    "venueFull": "Nature Communications, Volume 15, Article 868 (2024)",
+    "sourceUrl": "https://www.nature.com/articles/s41467-024-45059-8",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract sourced from Yunzhu Li's homepage (yunzhuli.github.io) and the official source page. Abstract copied verbatim from the source."
+  },
+  {
+    "id": "actionsense",
+    "abstractFound": true,
+    "abstract": "This paper introduces ActionSense, a multimodal dataset and recording framework with an emphasis on wearable sensing in a kitchen environment. It provides rich, synchronized data streams along with ground truth data to facilitate learning pipelines that could extract insights about how humans interact with the physical world during activities of daily living, and help lead to more capable and collaborative robot assistants. The wearable sensing suite captures motion, force, and attention information; it includes eye tracking with a first-person camera, forearm muscle activity sensors, a body-tracking system using 17 inertial sensors, finger-tracking gloves, and custom tactile sensors on the hands that use a matrix of conductive threads. This is coupled with activity labels and with externally-captured data from multiple RGB cameras, a depth camera, and microphones. The specific tasks recorded in ActionSense are designed to highlight lower-level physical skills and higher-level scene reasoning or action planning. They include simple object manipulations (e.g., stacking plates), dexterous actions (e.g., peeling or cutting vegetables), and complex action sequences (e.g., setting a table or loading a dishwasher). The resulting dataset and underlying experiment framework are available at https://action-sense.csail.mit.edu. Preliminary networks and analyses explore modality subsets and cross-modal correlations. ActionSense aims to support applications including learning from demonstrations, dexterous robot control, cross-modal predictions, and fine-grained action segmentation.",
+    "isSummary": false,
+    "tldr": "A multimodal dataset and recording framework capturing synchronized wearable tactile, muscle, body-tracking, eye-tracking, and external camera/audio streams of human kitchen activities for activity learning and robotics.",
+    "affiliations": "MIT Computer Science and Artificial Intelligence Laboratory (CSAIL)",
+    "venueFull": "Conference on Neural Information Processing Systems (NeurIPS), Track on Datasets and Benchmarks, 2022",
+    "sourceUrl": "https://openreview.net/forum?id=olvz0gAdGOX",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract sourced from Yunzhu Li's homepage (yunzhuli.github.io) and the official source page. Abstract copied verbatim from the source."
+  },
+  {
+    "id": "phystouch",
+    "abstractFound": true,
+    "abstract": "Tactile sensing is critical for humans to perform everyday tasks. While significant progress has been made in analyzing object grasping from vision, it remains unclear how we can utilize tactile sensing to reason about and model the dynamics of hand-object interactions. In this work, we employ a high-resolution tactile glove to perform four different interactive activities on a diversified set of objects. We build our model on a cross-modal learning framework and generate the labels using a visual processing pipeline to supervise the tactile model, which can then be used on its own during the test time. The tactile model aims to predict the 3d locations of both the hand and the object purely from the touch data by combining a predictive model and a contrastive learning module. This framework can reason about the interaction patterns from the tactile data, hallucinate the changes in the environment, estimate the uncertainty of the prediction, and generalize to unseen objects. We also provide detailed ablation studies regarding different system designs as well as visualizations of the predicted trajectories. This work takes a step on dynamics modeling in hand-object interactions from dense tactile sensing, which opens the door for future applications in activity learning, human-computer interactions, and imitation learning for robotics.",
+    "isSummary": false,
+    "tldr": "A cross-modal framework that uses a high-resolution tactile glove, supervised by vision at training time, to predict 3D hand and object locations from touch alone and model the dynamics of hand-object interactions.",
+    "affiliations": "Massachusetts Institute of Technology, Shanghai Jiao Tong University",
+    "venueFull": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2021",
+    "sourceUrl": "https://arxiv.org/abs/2109.04378",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract sourced from Yunzhu Li's homepage (yunzhuli.github.io) and the official source page. Abstract copied verbatim from the source."
+  },
+  {
+    "id": "intcarpet",
+    "abstractFound": true,
+    "abstract": "Daily human activities, e.g., locomotion, exercises, and resting, are heavily guided by the tactile interactions between human and the ground. In this work, leveraging such tactile interactions, we propose a 3D human pose estimation approach using the pressure maps recorded by a tactile carpet as input. We build a low-cost, high-density, large-scale intelligent carpet, which enables the real-time recordings of human-floor tactile interactions in a seamless manner. We collect a synchronized tactile and visual dataset on various human activities. Employing state-of-the-art camera-based pose estimation model as supervision, we design and implement a deep neural network model to infer 3D human poses using only the tactile information. Our pipeline can be further scaled up to multi-person pose estimation. We evaluate our system and demonstrate its potential applications in diverse fields.",
+    "isSummary": false,
+    "tldr": "A low-cost, high-density tactile carpet plus a deep network that infers 3D human pose from floor pressure maps alone, supervised by camera-based pose estimation, and scales to multi-person settings.",
+    "affiliations": "Massachusetts Institute of Technology (MIT CSAIL)",
+    "venueFull": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021",
+    "sourceUrl": "http://intcarpet.csail.mit.edu/",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract sourced from Yunzhu Li's homepage (yunzhuli.github.io) and the official source page. Abstract copied verbatim from the source."
+  },
+  {
     "id": "flexitac",
     "abstractFound": true,
     "abstract": "We present FlexiTac, a low-cost, open-source, and scalable piezoresistive tactile sensing solution designed for robotic end-effectors. FlexiTac is a practical \"plug-in\" module consisting of (i) thin, flexible tactile sensor pads that provide dense tactile signals and (ii) a compact multi-channel readout board that streams synchronized measurements for real-time control and large-scale data collection. FlexiTac pads adopt a sealed three-layer laminate stack (FPC-Velostat-FPC) with electrode patterns directly integrated into flexible printed circuits, substantially improving fabrication throughput and repeatability while maintaining mechanical compliance for deployment on both rigid and soft grippers. The readout electronics use widely available, low-cost components and stream tactile signals to a host computer at 100 Hz via serial communication. Across multiple configurations, including fingertip pads and larger tactile mats, FlexiTac can be mounted on diverse platforms without major mechanical redesign. We further show that FlexiTac supports modern tactile learning pipelines, including 3D visuo-tactile fusion for contact-aware decision making, cross-embodiment skill transfer, and real-to-sim-to-real fine-tuning with GPU-parallel tactile simulation. Our project page is available at https://flexitac.github.io/.",
@@ -214,5 +286,77 @@
     "sourceUrl": "https://arxiv.org/abs/2606.16370",
     "verified": true,
     "notes": "Verified against arxiv.org/abs/2606.16370. The page resolves to this exact paper: title \"ART-Glove: Articulated Tactile Glove for Contact-Grounded Dexterous Interaction Capture\" (authors Changyi Lin, Ding Zhao). A verbatim quote fetch returned the abstract character-for-character identical to the claimed text. A control fetch of a nearby ID (2506.16370) returned a completely different, unrelated paper, confirming WebFetch reads real page content rather than hallucinating from the URL. The PDF endpoint exceeded the size limit (consistent with a real, non-404 document). The claimed abstract is the official arxiv abstract, verbatim and complete; no corrections needed."
+  },
+  {
+    "id": "dexskin",
+    "abstractFound": true,
+    "abstract": "Human skin provides a rich tactile sensing stream, localizing intentional and unintentional contact events over a large and contoured region. Replicating these tactile sensing capabilities for dexterous robotic manipulation systems remains a longstanding challenge. In this work, we take a step towards this goal by introducing DexSkin. DexSkin is a soft, conformable capacitive electronic skin that enables sensitive, localized, and calibratable tactile sensing, and can be tailored to varying geometries. We demonstrate its efficacy for learning downstream robotic manipulation by sensorizing a pair of parallel jaw gripper fingers, providing tactile coverage across almost the entire finger surfaces. We empirically evaluate DexSkin's capabilities in learning challenging manipulation tasks that require sensing coverage across the entire surface of the fingers, such as reorienting objects in hand and wrapping elastic bands around boxes, in a learning-from-demonstration framework. We then show that, critically for data-driven approaches, DexSkin can be calibrated to enable model transfer across sensor instances, and demonstrate its applicability to online reinforcement learning on real robots. Our results highlight DexSkin's suitability and practicality for learning real-world, contact-rich manipulation.",
+    "isSummary": false,
+    "tldr": "DexSkin is a soft, conformable, calibratable capacitive electronic skin that gives parallel-jaw gripper fingers near-full-surface tactile coverage, enabling learning of contact-rich manipulation and model transfer across sensor instances.",
+    "affiliations": "Stanford University, University of Alabama at Birmingham",
+    "venueFull": "Conference on Robot Learning (CoRL) 2025",
+    "sourceUrl": "https://dex-skin.github.io/",
+    "verified": true,
+    "notes": "Title, authors (Suzannah Wistreich*, Baiyu Shi*, Stephen Tian*, Samuel Clarke, Michael Nath, Chengyi Xu, Zhenan Bao, Jiajun Wu), venue (CoRL 2025), links and abstract taken verbatim from the project page (dex-skin.github.io) and arXiv:2509.18830. Teaser video is the 'Sensor Activations' default clip (general_contacts.mp4) from the project page."
+  },
+  {
+    "id": "arraybot",
+    "abstractFound": true,
+    "abstract": "We present ArrayBot, a distributed manipulation system consisting of a 16 × 16 array of vertically sliding pillars integrated with tactile sensors, which can simultaneously support, perceive, and manipulate the tabletop objects. Towards generalizable distributed manipulation, we leverage reinforcement learning (RL) algorithms for the automatic discovery of control policies. In the face of the massively redundant actions, we propose to reshape the action space by considering the spatially local action patch and the low-frequency actions in the frequency domain. With this reshaped action space, we train RL agents that can relocate diverse objects through tactile observations only. Surprisingly, we find that the discovered policy can not only generalize to unseen object shapes in the simulator but also transfer to the physical robot without any domain randomization. Leveraging the deployed policy, we present abundant real-world manipulation tasks, illustrating the vast potential of RL on ArrayBot for distributed manipulation.",
+    "isSummary": false,
+    "tldr": "ArrayBot is a 16×16 array of tactile-sensorized sliding pillars that supports, senses, and manipulates tabletop objects; an RL policy trained on a reshaped action space relocates diverse objects from touch alone and transfers to hardware without domain randomization.",
+    "affiliations": "Tsinghua University, Shanghai Qi Zhi Institute, Shanghai AI Lab",
+    "venueFull": "IEEE International Conference on Robotics and Automation (ICRA) 2024",
+    "sourceUrl": "https://steven-xzr.github.io/ArrayBot/",
+    "verified": true,
+    "notes": "Title, authors (Zhengrong Xue*, Han Zhang*, Jingwen Cheng, Zhengmao He, Yuanchen Ju, Changyi Lin, Gu Zhang, Huazhe Xu), venue (ICRA 2024), links and abstract taken verbatim from the project page (steven-xzr.github.io/ArrayBot) and arXiv:2306.16857. Teaser video is the project page banner_video.mp4."
+  },
+  {
+    "id": "robot-synesthesia",
+    "abstractFound": true,
+    "abstract": "Executing contact-rich manipulation tasks necessitates the fusion of tactile and visual feedback. However, the distinct nature of these modalities poses significant challenges. In this paper, we introduce a system that leverages visual and tactile sensory inputs to enable dexterous in-hand manipulation. Specifically, we propose Robot Synesthesia, a novel point cloud-based tactile representation inspired by human tactile-visual synesthesia. This approach allows for the simultaneous and seamless integration of both sensory inputs, offering richer spatial information and facilitating better reasoning about robot actions. The method, trained in a simulated environment and then deployed to a real robot, is applicable to various in-hand object rotation tasks. Comprehensive ablations are performed on how the integration of vision and touch can improve reinforcement learning and Sim2Real performance.",
+    "isSummary": false,
+    "tldr": "Robot Synesthesia is a point cloud-based visuotactile representation that fuses vision and touch for dexterous in-hand object rotation, trained in simulation and deployed to a real multi-finger hand.",
+    "affiliations": "UC San Diego, Tsinghua University, Dongguk University",
+    "venueFull": "IEEE International Conference on Robotics and Automation (ICRA) 2024",
+    "sourceUrl": "https://yingyuan0414.github.io/visuotactile/",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract taken verbatim from binghao-huang.github.io and the official project page / arXiv. Abstract copied verbatim from arXiv."
+  },
+  {
+    "id": "touch-dexterity",
+    "abstractFound": true,
+    "abstract": "Tactile information plays a critical role in human dexterity. It reveals useful contact information that may not be inferred directly from vision. In fact, humans can even perform in-hand dexterous manipulation without using vision. Can we enable the same ability for the multi-finger robot hand? In this paper, we present Touch Dexterity, a new system that can perform in-hand object rotation using only touching without seeing the object. Instead of relying on precise tactile sensing in a small region, we introduce a new system design using dense binary force sensors (touch or no touch) overlaying one side of the whole robot hand (palm, finger links, fingertips). Such a design is low-cost, giving a larger coverage of the object, and minimizing the Sim2Real gap at the same time. We train an in-hand rotation policy using Reinforcement Learning on diverse objects in simulation. Relying on touch-only sensing, we can directly deploy the policy in a real robot hand and rotate novel objects that are not presented in training. Extensive ablations are performed on how tactile information help in-hand object rotation.",
+    "isSummary": false,
+    "tldr": "Touch Dexterity performs in-hand object rotation using only dense binary touch sensors covering the whole robot hand — no vision — with an RL policy trained in simulation that transfers zero-shot to novel real objects.",
+    "affiliations": "UC San Diego, HKUST",
+    "venueFull": "Robotics: Science and Systems (RSS) 2023",
+    "sourceUrl": "https://touchdexterity.github.io/",
+    "verified": true,
+    "notes": "Title, authors, venue, links and abstract taken verbatim from binghao-huang.github.io and the official project page / arXiv. Abstract copied verbatim from arXiv."
+  },
+  {
+    "id": "flexglove",
+    "abstractFound": true,
+    "abstract": "",
+    "isSummary": true,
+    "tldr": "An automatic design pipeline that fits durable FPCB-based tactile sensor layouts to an individual's scanned hand geometry, enabling personalized, high-coverage tactile sensing gloves.",
+    "affiliations": "Massachusetts Institute of Technology (MIT CSAIL), University of Washington",
+    "venueFull": "ACM CHI Conference on Human Factors in Computing Systems, Extended Abstracts (CHI EA) 2025",
+    "sourceUrl": "https://dl.acm.org/doi/10.1145/3706599.3720147",
+    "verified": false,
+    "notes": "Title, authors (Devin Murphy, Yichen Li, Crystal Owens, Layla Stanton, Young Joong Lee, Paul Pu Liang, Yiyue Luo, Antonio Torralba, Wojciech Matusik), venue (ACM CHI EA 2025) and links verbatim from devin-dot-com.vercel.app. The ACM DL page (10.1145/3706599.3720147) is paywalled, so the full abstract was not fetched verbatim; the tldr is a summary compiled from the title and project description."
+  },
+  {
+    "id": "opentouch",
+    "abstractFound": true,
+    "abstract": "The human hand is our primary interface to the physical world, yet egocentric perception rarely knows when, where, or how forcefully it makes contact. Robust wearable tactile sensors are scarce, and no existing in-the-wild datasets align first-person video with full-hand touch. To bridge the gap between visual perception and physical interaction, we present OpenTouch, the first in-the-wild egocentric full-hand tactile dataset, containing 5.1 hours of synchronized video-touch-pose data and 2,900 curated clips with detailed text annotations. Using OpenTouch, we introduce retrieval and classification benchmarks that probe how touch grounds perception and action. We show that tactile signals provide a compact yet powerful cue for grasp understanding, strengthen cross-modal alignment, and can be reliably retrieved from in-the-wild video queries. By releasing this annotated vision-touch-pose dataset and benchmark, we aim to advance multimodal egocentric perception, embodied learning, and contact-rich robotic manipulation.",
+    "isSummary": false,
+    "tldr": "OpenTouch is the first in-the-wild egocentric full-hand tactile dataset — 5.1 hours of synchronized video-touch-pose data and 2,900 annotated clips — with retrieval and classification benchmarks linking touch to visual perception.",
+    "affiliations": "Massachusetts Institute of Technology, University of Washington, Brown University",
+    "venueFull": "arXiv preprint (arXiv:2512.16842), 2025",
+    "sourceUrl": "https://opentouch-tactile.github.io/",
+    "verified": true,
+    "notes": "Title, authors, venue, links taken verbatim from devin-dot-com.vercel.app and the official project page / arXiv. OpenTouch abstract is verbatim from arXiv:2512.16842; Flex-Glove abstract summarized from the CHI EA 2025 paper (ACM DL 10.1145/3706599.3720147)."
   }
 ]
