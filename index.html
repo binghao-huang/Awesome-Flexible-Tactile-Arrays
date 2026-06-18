@@ -63,6 +63,12 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     /* Subtle ambient hover glow for cards */
     .card-hover:hover { box-shadow: 0px 4px 20px rgba(18, 32, 51, 0.05); transform: translateY(-2px); }
+    /* Left category rail (design-system mockup look) */
+    .active-tab-glow { box-shadow: 0 0 15px rgba(0, 85, 206, 0.10); }
+    #filter-sidebar::-webkit-scrollbar { width: 6px; }
+    #filter-sidebar::-webkit-scrollbar-track { background: transparent; }
+    #filter-sidebar::-webkit-scrollbar-thumb { background: #c2c6d7; border-radius: 10px; }
+    #filter-sidebar::-webkit-scrollbar-thumb:hover { background: #737786; }
     /* Author links inside cards: subtle, inherit-toned */
     .authors a { color: #525f75; text-decoration: none; }
     .authors a:hover { color: #0055ce; text-decoration: underline; }
@@ -71,7 +77,7 @@
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     /* Embed mode (?embed=1): used inside the home-page preview window.
        Hides chrome so only the scrolling project cards show. */
-    .embed-mode header, .embed-mode #gallery-hero, .embed-mode #filter-section, .embed-mode footer { display: none !important; }
+    .embed-mode header, .embed-mode #gallery-hero, .embed-mode #filter-section, .embed-mode #filter-sidebar, .embed-mode footer { display: none !important; }
     .embed-mode #gallery-section { margin-bottom: 0 !important; padding-top: 24px; padding-bottom: 24px; }
     /* Keep 3 cards per row even in the narrow preview window (matches the full gallery). */
     .embed-mode #gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; }
@@ -106,8 +112,51 @@
 </nav>
 </header>
 
-<!-- Main Content Canvas -->
-<main class="flex-grow flex flex-col">
+<!-- Main Content Canvas: left category rail (flush to viewport edge) + content column -->
+<main class="flex-grow flex flex-row items-start w-full">
+
+<!-- Left Category Rail (desktop only) — flush to the browser's left edge, full height,
+     sticky under the navbar. Look is based on the design-system mockup; categories and
+     live counts are driven by the real card data and kept in sync with the top pills. -->
+<aside id="filter-sidebar" class="hidden lg:flex flex-col shrink-0 w-64 self-stretch sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto bg-surface-subtle border-r border-outline-variant px-5 py-6">
+  <div class="mb-5">
+    <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-deep-space">Categories</h2>
+    <p class="font-label-caps text-label-caps text-secondary/70 mt-0.5">Filter Research</p>
+  </div>
+  <nav class="flex flex-col gap-1">
+    <button data-filter="all" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors bg-secondary-container text-on-secondary-container font-bold active-tab-glow">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">grid_view</span>All Works</span>
+      <span class="text-xs opacity-70 font-code-sm" data-count="all"></span>
+    </button>
+    <button data-filter="Hardware Design" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">memory</span>Hardware Design</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Hardware Design"></span>
+    </button>
+    <button data-filter="Glove/Hand" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">back_hand</span>Glove/Hand</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Glove/Hand"></span>
+    </button>
+    <button data-filter="Multi-Modal Learning" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">psychology</span>Multi-Modal Learning</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Multi-Modal Learning"></span>
+    </button>
+    <button data-filter="Simulation" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">view_in_ar</span>Simulation</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Simulation"></span>
+    </button>
+    <button data-filter="Locomanipulation/Humanoid" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>Locomanip./Humanoid</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Locomanipulation/Humanoid"></span>
+    </button>
+    <button data-filter="Industry Deployment" class="sidebar-filter-btn flex items-center justify-between w-full p-3 text-left rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container">
+      <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]">factory</span>Industry Deployment</span>
+      <span class="text-xs opacity-60 font-code-sm" data-count="Industry Deployment"></span>
+    </button>
+  </nav>
+</aside>
+
+<!-- Content column -->
+<div id="content-column" class="flex-1 min-w-0 flex flex-col">
 
 <!-- Hero Section -->
 <section id="gallery-hero" class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-center flex flex-col items-center justify-center">
@@ -857,6 +906,7 @@
 <!-- Empty state -->
 <p id="gallery-empty" class="hidden text-center text-secondary py-16 font-body-md">No works in this category yet.</p>
 </section>
+</div><!-- /content-column -->
 </main>
 
 <!-- Footer -->
@@ -897,37 +947,66 @@
     }
   })();
 
-  // Category filtering
+  // Category filtering — one engine drives both the horizontal pills (top of cards)
+  // and the left category rail (desktop), keeping their active states in sync.
   (function () {
-    var buttons = Array.from(document.querySelectorAll('.filter-btn'));
+    var pills = Array.from(document.querySelectorAll('.filter-btn'));         // top pills
+    var sideBtns = Array.from(document.querySelectorAll('.sidebar-filter-btn')); // left rail
     var cards = Array.from(document.querySelectorAll('.gallery-card'));
     var empty = document.getElementById('gallery-empty');
-    var activeCls = ['bg-secondary-container', 'text-on-secondary-container', 'border-transparent'];
-    var idleCls = ['bg-surface-base', 'text-secondary', 'border-outline-variant'];
 
-    function setActive(btn) {
-      buttons.forEach(function (b) {
-        activeCls.forEach(function (c) { b.classList.remove(c); });
-        idleCls.forEach(function (c) { b.classList.add(c); });
+    function catsOf(card) {
+      return (card.getAttribute('data-category') || '')
+        .split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    }
+
+    // Populate live counts in the rail so they never drift from the data.
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var key = el.getAttribute('data-count');
+      var n = key === 'all'
+        ? cards.length
+        : cards.filter(function (c) { return catsOf(c).indexOf(key) !== -1; }).length;
+      el.textContent = '(' + n + ')';
+    });
+
+    // Pill (horizontal) active styling
+    var pillActive = ['bg-secondary-container', 'text-on-secondary-container', 'border-transparent'];
+    var pillIdle = ['bg-surface-base', 'text-secondary', 'border-outline-variant'];
+    function stylePills(filter) {
+      pills.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === filter;
+        pillActive.forEach(function (c) { b.classList.toggle(c, on); });
+        pillIdle.forEach(function (c) { b.classList.toggle(c, !on); });
       });
-      idleCls.forEach(function (c) { btn.classList.remove(c); });
-      activeCls.forEach(function (c) { btn.classList.add(c); });
+    }
+
+    // Rail (vertical) active styling
+    var sideActive = ['bg-secondary-container', 'text-on-secondary-container', 'font-bold', 'active-tab-glow'];
+    function styleSidebar(filter) {
+      sideBtns.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === filter;
+        sideActive.forEach(function (c) { b.classList.toggle(c, on); });
+        b.classList.toggle('text-on-surface-variant', !on);
+        b.classList.toggle('hover:bg-surface-container', !on);
+      });
     }
 
     // A card may belong to several categories (comma-separated in data-category).
-    buttons.forEach(function (btn) {
+    function apply(filter) {
+      stylePills(filter);
+      styleSidebar(filter);
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = filter === 'all' || catsOf(card).indexOf(filter) !== -1;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      if (empty) empty.classList.toggle('hidden', visible !== 0);
+    }
+
+    pills.concat(sideBtns).forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var filter = btn.getAttribute('data-filter');
-        setActive(btn);
-        var visible = 0;
-        cards.forEach(function (card) {
-          var cats = (card.getAttribute('data-category') || '')
-            .split(',').map(function (s) { return s.trim(); });
-          var show = filter === 'all' || cats.indexOf(filter) !== -1;
-          card.classList.toggle('hidden', !show);
-          if (show) visible++;
-        });
-        if (empty) empty.classList.toggle('hidden', visible !== 0);
+        apply(btn.getAttribute('data-filter'));
       });
     });
   })();
