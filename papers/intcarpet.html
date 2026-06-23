@@ -63,6 +63,12 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     /* Subtle ambient hover glow for cards */
     .card-hover:hover { box-shadow: 0px 4px 20px rgba(18, 32, 51, 0.05); transform: translateY(-2px); }
+    /* Left category rail (design-system mockup look) */
+    .active-tab-glow { box-shadow: 0 0 15px rgba(0, 85, 206, 0.10); }
+    #filter-sidebar::-webkit-scrollbar { width: 6px; }
+    #filter-sidebar::-webkit-scrollbar-track { background: transparent; }
+    #filter-sidebar::-webkit-scrollbar-thumb { background: #c2c6d7; border-radius: 10px; }
+    #filter-sidebar::-webkit-scrollbar-thumb:hover { background: #737786; }
     /* Author links inside cards: subtle, inherit-toned */
     .authors a { color: #525f75; text-decoration: none; }
     .authors a:hover { color: #0055ce; text-decoration: underline; }
@@ -71,7 +77,7 @@
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     /* Embed mode (?embed=1): used inside the home-page preview window.
        Hides chrome so only the scrolling project cards show. */
-    .embed-mode header, .embed-mode #gallery-hero, .embed-mode #filter-section, .embed-mode footer { display: none !important; }
+    .embed-mode header, .embed-mode #gallery-hero, .embed-mode #filter-section, .embed-mode #filter-sidebar, .embed-mode footer { display: none !important; }
     .embed-mode #gallery-section { margin-bottom: 0 !important; padding-top: 24px; padding-bottom: 24px; }
     /* Keep 3 cards per row even in the narrow preview window (matches the full gallery). */
     .embed-mode #gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; }
@@ -125,6 +131,7 @@
 <a class="bg-transparent border border-primary text-primary font-body-md px-6 py-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors inline-flex items-center gap-2" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Intelligent_Carpet_Inferring_3D_Human_Pose_From_Tactile_Signals_CVPR_2021_paper.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined">description</span>Paper</a>
 <a class="bg-transparent border border-primary text-primary font-body-md px-6 py-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors inline-flex items-center gap-2" href="https://github.com/yiyueluo/IntelligentCarpet" target="_blank" rel="noopener"><span class="material-symbols-outlined">code</span>Code</a>
 <a class="bg-transparent border border-primary text-primary font-body-md px-6 py-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors inline-flex items-center gap-2" href="https://www.youtube.com/watch?v=U6svj37h2U4" target="_blank" rel="noopener"><span class="material-symbols-outlined">movie</span>Video</a>
+<a class="bg-transparent border border-primary text-primary font-body-md px-6 py-3 rounded-DEFAULT hover:bg-surface-container-low transition-colors inline-flex items-center gap-2" href="papers/intcarpet.html" target="_blank" rel="noopener"><span class="material-symbols-outlined">arrow_forward</span>View Details</a>
 </div>
 </div>
 <div class="lg:col-span-5 relative mt-8 lg:mt-0 rounded-xl overflow-hidden border border-outline-variant bg-surface-subtle aspect-[17/22] max-w-md mx-auto lg:mx-0">
@@ -148,6 +155,7 @@
 <a class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-body-md py-1" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Intelligent_Carpet_Inferring_3D_Human_Pose_From_Tactile_Signals_CVPR_2021_paper.pdf" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">description</span>Paper<span class="material-symbols-outlined text-[16px] text-secondary/60">open_in_new</span></a>
 <a class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-body-md py-1" href="https://github.com/yiyueluo/IntelligentCarpet" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">code</span>Code<span class="material-symbols-outlined text-[16px] text-secondary/60">open_in_new</span></a>
 <a class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-body-md py-1" href="https://www.youtube.com/watch?v=U6svj37h2U4" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">movie</span>Video<span class="material-symbols-outlined text-[16px] text-secondary/60">open_in_new</span></a>
+<a class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-body-md py-1" href="papers/intcarpet.html" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[18px]">arrow_forward</span>View Details<span class="material-symbols-outlined text-[16px] text-secondary/60">open_in_new</span></a>
 </div>
 <div class="mt-8">
 <a href="../index.html" class="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors font-body-md"><span class="material-symbols-outlined text-[18px]">arrow_back</span>Back to all works</a>
