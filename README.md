@@ -1,6 +1,6 @@
-# Awesome Flexible Tactile Arrays [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome FlexiTac [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of research on **dense, flexible piezoresistive tactile arrays** for robot manipulation — spanning sensor hardware, simulation, and policy learning.
+The growing ecosystem of research building on **FlexiTac**, together with the prior works. Spans sensor hardware, simulation, and policy learning.
 
 🔗 **Live site:** https://binghao-huang.github.io/Awesome-Flexible-Tactile-Arrays/
 

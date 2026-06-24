@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TacVLA: Contact-Aware Tactile Fusion for Robust Vision-Language-Action Manipulation — Awesome Flexible Tactile Arrays</title>
+<title>TacVLA: Contact-Aware Tactile Fusion for Robust Vision-Language-Action Manipulation — Awesome FlexiTac</title>
 <meta name="description" content="TacVLA augments Vision-Language-Action models with tactile sensing via a contact-aware gating mechanism, boosting robustness in occlusion-heavy, contact-rich, fine-grained manipulation tasks."/>
 
 <!-- Resource hints -->
@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin/>
 
 <!-- Google Fonts + Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
 <!-- Tailwind CSS -->
@@ -43,17 +43,25 @@
                 },
                 borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
                 spacing: { "container-max": "1280px", "gutter": "24px", "margin-mobile": "16px", "base": "8px", "margin-desktop": "48px" },
+                // One font family for ALL text (icons keep Material Symbols via their own class).
                 fontFamily: {
-                    "display-lg": ["Inter"], "code-sm": ["JetBrains Mono"], "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"], "code-sm": ["Inter"], "headline-lg": ["Inter"],
                     "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "label-caps": ["Inter"]
                 },
+                // Collapsed to 3 sizes only — L 26 (hero/brand), M 16 (all titles + body), S 13 (labels/tags/fine print).
+                // Hierarchy comes from weight, not size. Built-in xs/sm/base/lg are overridden so stray
+                // utility classes also resolve to these 3 (icon sizes text-[16px]/[20px]/2xl are left alone).
                 fontSize: {
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "code-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["16px", {"lineHeight": "22px", "fontWeight": "700"}],
                     "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    "code-sm": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "xs": ["13px", {"lineHeight": "16px"}],
+                    "sm": ["13px", {"lineHeight": "18px"}],
+                    "base": ["16px", {"lineHeight": "24px"}],
+                    "lg": ["16px", {"lineHeight": "24px"}]
                 }
             }
         }
@@ -84,8 +92,8 @@
     .embed-mode #gallery-section { padding-left: 16px !important; padding-right: 16px !important; }
     /* Tighten card internals so 3-up stays readable in the smaller window */
     .embed-mode .gallery-card .relative { height: 7rem !important; }
-    .embed-mode .gallery-card h3 { font-size: 13px !important; line-height: 17px !important; }
-    .embed-mode .gallery-card .authors { font-size: 11px !important; }
+    .embed-mode .gallery-card h3 { font-size: 13px !important; line-height: 18px !important; }
+    .embed-mode .gallery-card .authors { font-size: 13px !important; }
     .embed-mode .gallery-card .p-5 { padding: 10px !important; }
 </style>
 </head>
@@ -95,7 +103,7 @@
 <header class="bg-surface-base text-primary font-body-md w-full top-0 border-b border-outline-variant sticky z-50">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
 <div class="flex items-center gap-6">
-<a class="font-headline-lg text-headline-lg font-bold text-deep-space tracking-tight" href="../index.html">Awesome Flexible Tactile Arrays</a>
+<a class="font-headline-lg text-headline-lg font-bold text-deep-space tracking-tight" href="../index.html">Awesome FlexiTac</a>
 </div>
 <div class="hidden md:flex items-center gap-4">
 <a href="https://discord.gg/6gw887Vxms" target="_blank" rel="noopener" class="bg-deep-space text-white px-4 py-2 rounded font-label-caps text-label-caps hover:bg-on-secondary-fixed transition-colors">Join Discord</a>

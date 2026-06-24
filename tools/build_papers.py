@@ -34,6 +34,7 @@ SLUGS = [
     "vt-refine",
     "touch-in-the-wild",
     None,  # Analog Devices industry feature — links out to analog.com, no detail page
+    None,  # Analog Devices Signals+ feature (slip prevention) — external, no detail page
     "leflexitac",
     "policy-consensus",
     "reactive-gripper",
@@ -401,7 +402,7 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 
     # Detail pages live in papers/, so root paths get a ../ prefix.
     head = head_inner
-    head = re.sub(r"<title>.*?</title>", f"<title>{title_plain} — Awesome Flexible Tactile Arrays</title>", head, flags=re.S)
+    head = re.sub(r"<title>.*?</title>", f"<title>{title_plain} — Awesome FlexiTac</title>", head, flags=re.S)
     head = re.sub(r'<meta name="description"[^>]*/>', f'<meta name="description" content="{desc}"/>', head)
 
     return f"""<!DOCTYPE html>
@@ -413,7 +414,7 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 <header class="bg-surface-base text-primary font-body-md w-full top-0 border-b border-outline-variant sticky z-50">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
 <div class="flex items-center gap-6">
-<a class="font-headline-lg text-headline-lg font-bold text-deep-space tracking-tight" href="../index.html">Awesome Flexible Tactile Arrays</a>
+<a class="font-headline-lg text-headline-lg font-bold text-deep-space tracking-tight" href="../index.html">Awesome FlexiTac</a>
 </div>
 <div class="hidden md:flex items-center gap-4">
 <a href="https://discord.gg/6gw887Vxms" target="_blank" rel="noopener" class="bg-deep-space text-white px-4 py-2 rounded font-label-caps text-label-caps hover:bg-on-secondary-fixed transition-colors">Join Discord</a>
