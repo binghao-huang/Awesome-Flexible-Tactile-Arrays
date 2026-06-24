@@ -2,7 +2,7 @@
 
 The growing ecosystem of research building on **FlexiTac**, together with the prior works. Spans sensor hardware, simulation, and policy learning.
 
-🔗 **Live site:** https://binghao-huang.github.io/Awesome-Flexible-Tactile-Arrays/
+🔗 **Live site:** https://binghao-huang.github.io/Awesome-Flexitac/
 
 Maintained by the [FlexiTac](https://flexitac.github.io/) team. Inclusion does **not** imply use of the FlexiTac sensor — works built on it are marked with a `FlexiTac` badge on the site.
 
@@ -20,7 +20,7 @@ Works in robot manipulation that use dense, flexible, low-cost tactile sensing (
 
 ## Contributing
 
-Have a relevant work? **[Open a PR or issue](https://github.com/binghao-huang/Awesome-Flexible-Tactile-Arrays/issues)** to add it.
+Have a relevant work? **[Open a PR or issue](https://github.com/binghao-huang/Awesome-Flexitac/issues)** to add it.
 
 To add an entry, edit [`index.html`](index.html) — copy an existing `<article class="gallery-card" ...>` block, update the teaser media (`static/`), title, authors, links, and `data-category` (comma-separated for multiple categories).
 
