@@ -413,8 +413,9 @@ def render_page(p: dict, head_inner: str, ab: dict | None) -> str:
 <!-- TopNavBar -->
 <header class="bg-surface-base text-primary font-body-md w-full top-0 border-b border-outline-variant sticky z-50">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-<div class="flex items-center gap-6">
+<div class="flex items-baseline gap-6">
 <a class="font-headline-lg text-[28px] md:text-[32px] font-bold text-deep-space tracking-tight" href="../index.html">Awesome FlexiTac</a>
+<a href="https://flexitac.github.io/" target="_blank" rel="noopener" class="hidden md:inline-block text-[16px] text-secondary hover:text-primary font-label-caps transition-colors">FlexiTac Homepage</a>
 </div>
 <div class="hidden md:flex items-center gap-4">
 <a href="https://discord.gg/6gw887Vxms" target="_blank" rel="noopener" class="bg-deep-space text-white px-4 py-2 rounded font-label-caps text-label-caps hover:bg-on-secondary-fixed transition-colors">Join Discord</a>
